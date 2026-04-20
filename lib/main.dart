@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner:
-          false, // Menghilangkan banner debug (opsional)
+          false, 
       home: LoginPage(),
     );
   }
@@ -25,12 +25,12 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  // 1. Ubah _formkey menjadi _formKey (camelCase standar Dart)
+  
   final _formKey = GlobalKey<FormState>();
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  // 2. Tambahkan dispose untuk mencegah memory leak
+  
   @override
   void dispose() {
     usernameController.dispose();
@@ -73,19 +73,19 @@ class _LoginPageState extends State<LoginPage> {
                   return null;
                 },
               ),
-              // 3. Tambahkan jarak (SizedBox) antara Username dan Password biar UI-nya rapi
+              
               const SizedBox(height: 16),
               TextFormField(
                 controller: passwordController,
                 obscureText:
-                    true, // 4. PENTING: Bikin teks password jadi titik-titik/sensor
+                    true, 
                 decoration: const InputDecoration(
-                  labelText: "Password", // Huruf awal kapital
+                  labelText: "Password", 
                   border: OutlineInputBorder(),
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return "Password wajib diisi"; // 5. Typo "passwodd" diperbaiki
+                    return "Password wajib diisi"; 
                   }
                   if (value.length < 4) {
                     return "Minimal 4 Huruf";
@@ -98,7 +98,7 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: login,
                 child: const Text(
                   "Login",
-                ), // 6. Ubah "Simpan" jadi "Login" biar pas dengan fungsinya
+                ), 
               ),
             ],
           ),
