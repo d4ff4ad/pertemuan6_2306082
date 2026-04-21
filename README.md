@@ -1,51 +1,52 @@
-# Pertemuan 6 - 2306082
+# Pertemuan 6 - 2306082 (Aplikasi Login Premium)
 
-A simple Flutter application demonstrating the implementation of form validation in a login screen. This project is part of the "Praktikum Pemrograman Mobile" (Mobile Programming Practicum) coursework.
+Aplikasi Flutter ini merupakan hasil pengembangan (*refactoring*) dari modul praktikum "Pemrograman Mobile" Pertemuan 6. Fokus utama pembaruan ini adalah *redesign* antarmuka (UI) menjadi lebih elegan dengan tema *Dark Mode* modern (terinspirasi dari UI/UX kekinian seperti DeepSeek) dan pemisahan struktur file agar kode menjadi lebih rapi dan dapat diskala (*scalable*). Seluruh UI dalam versi terbaru ini juga telah sepenuhnya dilokalisasi ke dalam Bahasa Indonesia.
 
-## Features
+## 🚀 Fitur Utama
 
-- **Login Form**: A basic login interface consisting of Username and Password fields.
-- **Form Validation**: 
-  - Validates that fields are not empty.
-  - Enforces a minimum length of 4 characters for both the username and password.
-- **Password Obscuring**: The password field input is obscured for security.
-- **Feedback Mechanism**: Displays a `SnackBar` containing a success message upon successful validation and login.
+- **Premium Dark Mode UI**: Antarmuka form masuk (*login*) yang *eye-catching* dengan gradasi warna ungu-hitam, sudut objek yang membulat (rounded), serta perpaduan teks putih yang nyaman dibaca.
+- **Form Validasi Keamanan**: 
+  - Validasi *input* untuk memastikan isian 'Nama Pengguna' dan 'Kata Sandi' tidak kosong dan harus diisi lebih dari 4 karakter.
+  - Sembunyikan (*obscure*) kata sandi dengan fitur ketuk ikon mata (*toggle visibility*).
+- **Komponen Ekstra Interaktif**: Dilengkapi elemen seperti opsi "Ingat saya" (*checkbox*) dan "Lupa kata sandi?".
+- **Sistem Navigasi Aman**: 
+  - Berpindah mulus ke halaman **Beranda** (Home Page) dengan menyapa nama pengguna setelah lulus uji validasi.
+  - Terdapat tombol **Keluar** (*Logout*) yang dilengkapi fungsional `Navigator.pushReplacement()`, bertujuan mencegah pengguna kembali mengakses halaman dalam / luar tanpa pengawasan dengan menahan tombol _Back_ OS.
+- **Terjemahan Penuh**: Penggunaan Bahasa Indonesia di semua sisi komponen hingga elemen interaktifnya (contoh: *tooltip*).
 
-## Project Structure
+## 📂 Struktur Proyek Terpisah
 
-The main logic and UI of the application are contained within `lib/main.dart`:
+Kode sekarang dipecah untuk menunjang performa dan kerapian *Clean Code*:
+```text
+lib/
+├── main.dart             # Penentu konfigurasi dasar aplikasi (Entry Point + Theme).
+└── pages/
+    ├── login_page.dart   # Logic validasi dan Antarmuka (UI) Halaman Masuk Utama.
+    └── home_page.dart    # Antarmuka Halaman Beranda (Selamat Datang) dan fungsi Logout.
+```
 
-- `MyApp`: The root widget that sets up the `MaterialApp` and configures the initial route.
-- `LoginPage`: A `StatefulWidget` representing the login screen.
-- `_LoginPageState`: Manages the state of the form, handles text controllers (`usernameController`, `passwordController`), and contains the validation logic.
+## 🛠️ Cara Menjalankan Proyek
 
-## Getting Started
+Pastikan set lingkungan Flutter Anda sudah terkonfigurasi pada PC/Laptop.
 
-To run this project locally, ensure you have Flutter installed and configured on your system.
-
-1. **Clone or Download** this repository.
-2. **Navigate** to the project directory:
+1. **Unduh (Clone)** repositori (folder) ini.
+2. **Arahkan Terminal** ke lokasi folder proyek:
    ```bash
    cd pertemuan6_2306082
    ```
-3. **Install Dependencies**:
+3. **Instal Dependensi**:
    ```bash
    flutter pub get
    ```
-4. **Run the App**:
+4. **Jalankan Aplikasi** di Emulator/Smarphone:
    ```bash
    flutter run
    ```
 
-## Dependencies
+## 📸 Tangkapan Layar (Screenshot)
 
-- `flutter`: The core Flutter SDK.
-- `cupertino_icons`: Default icons used in Flutter.
+![alt text](image-1.png)
 
-## Notes
+![alt text](image-2.png)
 
-- This project emphasizes the standard Dart camelCase conventions and memory management practices by properly disposing of `TextEditingController`s when they are no longer needed.
-- Additional UI improvements were made, such as adding spacing between form fields to improve user experience.
-
-# screenshot
-![alt text](image.png)
+![alt text](image-3.png)
