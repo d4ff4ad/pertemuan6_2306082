@@ -1,4 +1,4 @@
-# Pertemuan 6 - 2306082 (Aplikasi Login Premium)
+# Pertemuan 6 - 2306082 
 
 Aplikasi Flutter ini merupakan hasil pengembangan (*refactoring*) dari modul praktikum "Pemrograman Mobile" Pertemuan 6. Fokus utama pembaruan ini adalah *redesign* antarmuka (UI) menjadi lebih elegan dengan tema *Dark Mode* modern (terinspirasi dari UI/UX kekinian seperti DeepSeek) dan pemisahan struktur file agar kode menjadi lebih rapi dan dapat diskala (*scalable*). Seluruh UI dalam versi terbaru ini juga telah sepenuhnya dilokalisasi ke dalam Bahasa Indonesia.
 
